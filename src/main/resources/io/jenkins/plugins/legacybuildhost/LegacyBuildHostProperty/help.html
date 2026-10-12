@@ -1,0 +1,10 @@
+<div>
+  <p>Turns this agent into the proxy of a build host that cannot run a Jenkins agent, for example
+  AIX 7.1 or RHEL/CentOS 6, where no supported Java version is available.</p>
+  <p>Every process Jenkins starts on this agent, including Pipeline <code>sh</code> steps, runs on the
+  legacy host over SSH, in the same directory. File operations such as <code>junit</code>,
+  <code>archiveArtifacts</code> or <code>readFile</code> keep running on this agent.</p>
+  <p>The <code>workspace</code> directory under this agent's remote root directory must be shared with
+  the legacy host <strong>at the same path</strong>, for example over NFS, with the same user id on
+  both machines. When the agent comes online, its log shows whether the legacy host sees that directory.</p>
+</div>

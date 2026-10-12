@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+  Run builds on hosts that cannot run a Jenkins agent (AIX 7.1, RHEL/CentOS 6, HP-UX, Solaris ...) through a proxy agent and SSH.
+</div>
