@@ -2,6 +2,7 @@ package io.jenkins.plugins.legacybuildhost;
 
 import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.Extension;
+import hudson.FilePath;
 import hudson.Launcher;
 import hudson.LauncherDecorator;
 import hudson.Proc;
@@ -50,8 +51,8 @@ public class LegacyLauncherDecorator extends LauncherDecorator {
             if (cmds.isEmpty() || prop.localCommandList().contains(baseName(cmds.get(0)))) {
                 return getInner().launch(starter);
             }
-            String remote = RemoteCommand.build(
-                    cmds, starter.envs(), starter.pwd() == null ? null : starter.pwd().getRemote());
+            FilePath pwd = starter.pwd();
+            String remote = RemoteCommand.build(cmds, starter.envs(), pwd == null ? null : pwd.getRemote());
             List<String> ssh = new ArrayList<>(ssh());
             ssh.add(remote);
             LOGGER.log(Level.FINE, "{0}: {1}", new Object[] {prop.getHost(), remote});
