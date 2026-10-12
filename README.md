@@ -83,7 +83,7 @@ jenkins:
 
 ## Testing
 
-See [docs/TESTING.md](docs/TESTING.md) for testing on real Linux and AIX hosts.
+See [docs/TESTING.md](docs/TESTING.md) for testing on real Linux and AIX hosts, and [docs/DESIGN.md](docs/DESIGN.md) for the design, the alternatives and all known limitations.
 
 ## License
 
